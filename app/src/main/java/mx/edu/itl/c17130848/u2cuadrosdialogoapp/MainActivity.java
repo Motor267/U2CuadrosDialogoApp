@@ -89,4 +89,63 @@ public class MainActivity extends AppCompatActivity {
     public void mostrarToast ( String mensaje ) {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
     }
+
+    //----------------------------------------------------------------------------------------------
+    //Cuadro de dialogo con lista de opciones basicas
+    private CharSequence colores [] = { "Verde", "Blanco", "Rojo" };
+    public void btnDialogoListaBasicaClick ( View v ) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this );
+        builder.setTitle("Escoja un color bonito: ")
+                .setItems(colores, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        mostrarToast( "Color seleccionado: " + colores[which] );
+                    }
+                })
+                .create()
+                .show();
+    }
+
+    //----------------------------------------------------------------------------------------------
+    //Cuadros de dialogo con lista de opcones con botones de radio y seleccion unica
+    int iColorFavorito = 2; //Por default el Rojo
+    public void btnDialogoListaSeleccionUnicaClick ( View v ) {
+        AlertDialog.Builder builder = new AlertDialog.Builder( this );
+        builder.setTitle("Escoge tu color favorito: ")
+                .setSingleChoiceItems(colores, iColorFavorito, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        iColorFavorito = which;
+                        mostrarToast("Escogió: " + colores[ which ]);
+                    }
+                })
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        mostrarToast("Nuevo color favorito: " + colores [ which ]);
+                    }
+                })
+                .create()
+                .show();
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+    public void btnDialogoListaSeleccionMultipleClick ( View v ) {
+
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+    public void btnDialogoLayoutIncrustadoClick ( View v ) {
+
+    }
+
+    //----------------------------------------------------------------------------------------------
+
+    public void btnAcercaDeClick ( View v ) {
+
+    }
+
+    //----------------------------------------------------------------------------------------------
 }

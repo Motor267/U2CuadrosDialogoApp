@@ -80,30 +80,35 @@
                 android:id="@+id/button10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="btnDialogoListaBasicaClick"
                 android:text="Dialogo con lista de opciones basica" />
 
             <Button
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="btnDialogoListaSeleccionUnicaClick"
                 android:text="Dialogo con botones de radio seleccion unica" />
 
             <Button
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="btnDialogoListaSeleccionMultipleClick"
                 android:text="Dialogo con casillas de verificacion seleccion multiple" />
 
             <Button
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="btnDialogoLayoutIncrustadoClick"
                 android:text="Dialogo con layout incrustado" />
 
             <Button
                 android:id="@+id/button11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="btnAcercaDeClick"
                 android:text="Acerca de" />
         </LinearLayout>
     </ScrollView>
